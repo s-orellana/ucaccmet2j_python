@@ -54,19 +54,30 @@ for month in list_ofMonths:
     PPM.append(sum(Temporary_List))  #sum daily values, add them to list
    # Precip_PMonth.append({'%s' %(month): sum(Temporary_List)})  #Alternative version
 
-print(PPM) # see output 
+#print(PPM) # see output 
 
 #---- Saving to a JSON file
 
+'''
 import json
 with open('PART1_PPM.json', 'w') as JsonFile:
     json.dump(PPM, JsonFile)
+'''
+        
+# ----------------------------PART 2----------------------------
 
-        
-        
-        
-        
-        
+# Precipitation over the year
+PRCP_Year = sum(PPM)
+print(PRCP_Year)
+
+#Relative precipitation per mont
+
+RelativeP= []
+
+for item in PPM: #Go through precipitation per month 
+  RelativeP.append(item /PRCP_Year) #obtain and store relative prescipitation
+print(RelativeP)
+
         
         
         
